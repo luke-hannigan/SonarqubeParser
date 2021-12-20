@@ -1,0 +1,19 @@
+FROM kalilinux/kali
+MAINTAINER  Rhea Bonnerji <rhea.bonnerji@eriscsson.com>
+
+RUN apt-get update
+RUN apt install -y docker.io
+RUN apt-get install -y python3
+RUN apt-get install -y --version
+RUN apt-get -y install sudo
+RUN apt-get -y install firefox-esr
+RUN echo 'root:kali' | chpasswd
+RUN useradd -m -s /bin/bash -G sudo rhea
+RUN echo 'rhea:kali' | chpasswd
+USER rhea
+WORKDIR /home/rhea/
+RUN mkdir sonarqube && cd sonarqube && mkdir output
+WORKDIR /home/rhea/sonarqube
+COPY . /home/rhea/sonarqube
+ENTRYPOINT ["python3", "helperDocker.py"]
+
