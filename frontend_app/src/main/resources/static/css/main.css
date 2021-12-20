@@ -1,0 +1,38 @@
+body {
+  padding-top: 1rem;
+  font-family: "Lucida Console", "Courier New", monospace;
+  background-color: #FFF8DC;
+}
+.starter-template {
+  text-align: center;
+}
+
+h1{
+    color:#DC143C;
+      text-decoration: underline;
+}
+.columnTitle{
+    color:#6495ED;
+}
+
+ol li{
+ list-style:none;
+}
+
+.tests {
+    grid-column: 1;
+}
+
+.results {
+    grid-column: 2;
+}
+
+.wrapper{
+    display: grid;
+    display: flex;
+    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    font-weight: bold;
+}

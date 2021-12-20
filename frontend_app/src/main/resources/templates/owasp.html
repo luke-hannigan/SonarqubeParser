@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>OWASP Test Results</title>
+
+    <link rel="stylesheet" th:href="@{webjars/bootstrap/4.2.1/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+</head>
+<body>
+    <main role="main" class="container">
+
+        <div class="starter-template">
+            <h1>OWASP Top Ten Results</h1>
+            <img src="images/TeamName.png" width=20% height=40%>
+            <img src="images/sonarcube1.png" width=10% height=10%>
+        </div>
+        <h2>
+        <div class="wrapper">
+            <div class="tests">
+                <div class="columnTitle">
+                    <h2>Test</h2>
+                </div>
+                <ol>
+
+                    <li th:each="test : ${tests}" th:text="${test}"></li>
+
+                </ol>
+            </div>
+            <div class="results">
+                <div class="columnTitle">
+                    <h2>Result</h2>
+                </div>
+                <ol>
+
+                    <li th:each="result : ${results}" th:text="${result}"></li>
+
+                </ol>
+            </div>
+        </div>
+        </h2>
+    </main>
+    <script type="text/javascript" th:src="@{webjars/bootstrap/4.2.1/js/bootstrap.min.js}"></script>
+</body>
+</html>
